@@ -1,0 +1,1308 @@
+{
+  "vectors": [
+    {
+      "input": {
+        "version": 1,
+        "cases": [
+          {
+            "id": "empty",
+            "operation": "checksum",
+            "data_hex": ""
+          }
+        ]
+      },
+      "expected": {
+        "version": 1,
+        "profile": "ones-complement16-guarded-update-v1",
+        "word_order": "big_endian",
+        "status": "modeled",
+        "rows": [
+          {
+            "id": "empty",
+            "operation": "checksum",
+            "status": "modeled",
+            "reason": null,
+            "byte_length": 0,
+            "word_count": 0,
+            "padding_octets": 0,
+            "update_guard": null,
+            "assumptions": {
+              "supplied_checksum": null,
+              "offset": null,
+              "new_word": null
+            },
+            "result": {
+              "folded_sum": 0,
+              "checksum": 65535,
+              "checksum_hex": "ffff"
+            }
+          }
+        ],
+        "limitations": [
+          "supplied_synthetic_bytes_only",
+          "no_protocol_field_validation",
+          "no_actual_integrity_or_authenticity_claim",
+          "logical_caps_not_containment"
+        ]
+      }
+    },
+    {
+      "input": {
+        "version": 1,
+        "cases": [
+          {
+            "id": "zero",
+            "operation": "checksum",
+            "data_hex": "0000"
+          }
+        ]
+      },
+      "expected": {
+        "version": 1,
+        "profile": "ones-complement16-guarded-update-v1",
+        "word_order": "big_endian",
+        "status": "modeled",
+        "rows": [
+          {
+            "id": "zero",
+            "operation": "checksum",
+            "status": "modeled",
+            "reason": null,
+            "byte_length": 2,
+            "word_count": 1,
+            "padding_octets": 0,
+            "update_guard": null,
+            "assumptions": {
+              "supplied_checksum": null,
+              "offset": null,
+              "new_word": null
+            },
+            "result": {
+              "folded_sum": 0,
+              "checksum": 65535,
+              "checksum_hex": "ffff"
+            }
+          }
+        ],
+        "limitations": [
+          "supplied_synthetic_bytes_only",
+          "no_protocol_field_validation",
+          "no_actual_integrity_or_authenticity_claim",
+          "logical_caps_not_containment"
+        ]
+      }
+    },
+    {
+      "input": {
+        "version": 1,
+        "cases": [
+          {
+            "id": "odd1",
+            "operation": "checksum",
+            "data_hex": "01"
+          }
+        ]
+      },
+      "expected": {
+        "version": 1,
+        "profile": "ones-complement16-guarded-update-v1",
+        "word_order": "big_endian",
+        "status": "modeled",
+        "rows": [
+          {
+            "id": "odd1",
+            "operation": "checksum",
+            "status": "modeled",
+            "reason": null,
+            "byte_length": 1,
+            "word_count": 1,
+            "padding_octets": 1,
+            "update_guard": null,
+            "assumptions": {
+              "supplied_checksum": null,
+              "offset": null,
+              "new_word": null
+            },
+            "result": {
+              "folded_sum": 256,
+              "checksum": 65279,
+              "checksum_hex": "feff"
+            }
+          }
+        ],
+        "limitations": [
+          "supplied_synthetic_bytes_only",
+          "no_protocol_field_validation",
+          "no_actual_integrity_or_authenticity_claim",
+          "logical_caps_not_containment"
+        ]
+      }
+    },
+    {
+      "input": {
+        "version": 1,
+        "cases": [
+          {
+            "id": "odd3",
+            "operation": "checksum",
+            "data_hex": "010203"
+          }
+        ]
+      },
+      "expected": {
+        "version": 1,
+        "profile": "ones-complement16-guarded-update-v1",
+        "word_order": "big_endian",
+        "status": "modeled",
+        "rows": [
+          {
+            "id": "odd3",
+            "operation": "checksum",
+            "status": "modeled",
+            "reason": null,
+            "byte_length": 3,
+            "word_count": 2,
+            "padding_octets": 1,
+            "update_guard": null,
+            "assumptions": {
+              "supplied_checksum": null,
+              "offset": null,
+              "new_word": null
+            },
+            "result": {
+              "folded_sum": 1026,
+              "checksum": 64509,
+              "checksum_hex": "fbfd"
+            }
+          }
+        ],
+        "limitations": [
+          "supplied_synthetic_bytes_only",
+          "no_protocol_field_validation",
+          "no_actual_integrity_or_authenticity_claim",
+          "logical_caps_not_containment"
+        ]
+      }
+    },
+    {
+      "input": {
+        "version": 1,
+        "cases": [
+          {
+            "id": "negative-zero",
+            "operation": "checksum",
+            "data_hex": "FFFF"
+          }
+        ]
+      },
+      "expected": {
+        "version": 1,
+        "profile": "ones-complement16-guarded-update-v1",
+        "word_order": "big_endian",
+        "status": "modeled",
+        "rows": [
+          {
+            "id": "negative-zero",
+            "operation": "checksum",
+            "status": "modeled",
+            "reason": null,
+            "byte_length": 2,
+            "word_count": 1,
+            "padding_octets": 0,
+            "update_guard": null,
+            "assumptions": {
+              "supplied_checksum": null,
+              "offset": null,
+              "new_word": null
+            },
+            "result": {
+              "folded_sum": 65535,
+              "checksum": 0,
+              "checksum_hex": "0000"
+            }
+          }
+        ],
+        "limitations": [
+          "supplied_synthetic_bytes_only",
+          "no_protocol_field_validation",
+          "no_actual_integrity_or_authenticity_claim",
+          "logical_caps_not_containment"
+        ]
+      }
+    },
+    {
+      "input": {
+        "version": 1,
+        "cases": [
+          {
+            "id": "carry",
+            "operation": "checksum",
+            "data_hex": "FFFF0001"
+          }
+        ]
+      },
+      "expected": {
+        "version": 1,
+        "profile": "ones-complement16-guarded-update-v1",
+        "word_order": "big_endian",
+        "status": "modeled",
+        "rows": [
+          {
+            "id": "carry",
+            "operation": "checksum",
+            "status": "modeled",
+            "reason": null,
+            "byte_length": 4,
+            "word_count": 2,
+            "padding_octets": 0,
+            "update_guard": null,
+            "assumptions": {
+              "supplied_checksum": null,
+              "offset": null,
+              "new_word": null
+            },
+            "result": {
+              "folded_sum": 1,
+              "checksum": 65534,
+              "checksum_hex": "fffe"
+            }
+          }
+        ],
+        "limitations": [
+          "supplied_synthetic_bytes_only",
+          "no_protocol_field_validation",
+          "no_actual_integrity_or_authenticity_claim",
+          "logical_caps_not_containment"
+        ]
+      }
+    },
+    {
+      "input": {
+        "version": 1,
+        "cases": [
+          {
+            "id": "repeat-carry",
+            "operation": "checksum",
+            "data_hex": "FFFFFFFF0001"
+          }
+        ]
+      },
+      "expected": {
+        "version": 1,
+        "profile": "ones-complement16-guarded-update-v1",
+        "word_order": "big_endian",
+        "status": "modeled",
+        "rows": [
+          {
+            "id": "repeat-carry",
+            "operation": "checksum",
+            "status": "modeled",
+            "reason": null,
+            "byte_length": 6,
+            "word_count": 3,
+            "padding_octets": 0,
+            "update_guard": null,
+            "assumptions": {
+              "supplied_checksum": null,
+              "offset": null,
+              "new_word": null
+            },
+            "result": {
+              "folded_sum": 1,
+              "checksum": 65534,
+              "checksum_hex": "fffe"
+            }
+          }
+        ],
+        "limitations": [
+          "supplied_synthetic_bytes_only",
+          "no_protocol_field_validation",
+          "no_actual_integrity_or_authenticity_claim",
+          "logical_caps_not_containment"
+        ]
+      }
+    },
+    {
+      "input": {
+        "version": 1,
+        "cases": [
+          {
+            "id": "rfc1071",
+            "operation": "checksum",
+            "data_hex": "0001F203F4F5F6F7"
+          }
+        ]
+      },
+      "expected": {
+        "version": 1,
+        "profile": "ones-complement16-guarded-update-v1",
+        "word_order": "big_endian",
+        "status": "modeled",
+        "rows": [
+          {
+            "id": "rfc1071",
+            "operation": "checksum",
+            "status": "modeled",
+            "reason": null,
+            "byte_length": 8,
+            "word_count": 4,
+            "padding_octets": 0,
+            "update_guard": null,
+            "assumptions": {
+              "supplied_checksum": null,
+              "offset": null,
+              "new_word": null
+            },
+            "result": {
+              "folded_sum": 56818,
+              "checksum": 8717,
+              "checksum_hex": "220d"
+            }
+          }
+        ],
+        "limitations": [
+          "supplied_synthetic_bytes_only",
+          "no_protocol_field_validation",
+          "no_actual_integrity_or_authenticity_claim",
+          "logical_caps_not_containment"
+        ]
+      }
+    },
+    {
+      "input": {
+        "version": 1,
+        "cases": [
+          {
+            "id": "swapped",
+            "operation": "checksum",
+            "data_hex": "010003F2F5F4F7F6"
+          }
+        ]
+      },
+      "expected": {
+        "version": 1,
+        "profile": "ones-complement16-guarded-update-v1",
+        "word_order": "big_endian",
+        "status": "modeled",
+        "rows": [
+          {
+            "id": "swapped",
+            "operation": "checksum",
+            "status": "modeled",
+            "reason": null,
+            "byte_length": 8,
+            "word_count": 4,
+            "padding_octets": 0,
+            "update_guard": null,
+            "assumptions": {
+              "supplied_checksum": null,
+              "offset": null,
+              "new_word": null
+            },
+            "result": {
+              "folded_sum": 62173,
+              "checksum": 3362,
+              "checksum_hex": "0d22"
+            }
+          }
+        ],
+        "limitations": [
+          "supplied_synthetic_bytes_only",
+          "no_protocol_field_validation",
+          "no_actual_integrity_or_authenticity_claim",
+          "logical_caps_not_containment"
+        ]
+      }
+    },
+    {
+      "input": {
+        "version": 1,
+        "cases": [
+          {
+            "id": "verify-zero",
+            "operation": "verify",
+            "data_hex": "FFFF",
+            "supplied_checksum": 0
+          }
+        ]
+      },
+      "expected": {
+        "version": 1,
+        "profile": "ones-complement16-guarded-update-v1",
+        "word_order": "big_endian",
+        "status": "modeled",
+        "rows": [
+          {
+            "id": "verify-zero",
+            "operation": "verify",
+            "status": "modeled",
+            "reason": null,
+            "byte_length": 2,
+            "word_count": 1,
+            "padding_octets": 0,
+            "update_guard": null,
+            "assumptions": {
+              "supplied_checksum": 0,
+              "offset": null,
+              "new_word": null
+            },
+            "result": {
+              "data_sum": 65535,
+              "recomputed_checksum": 0,
+              "supplied_checksum": 0,
+              "combined_sum": 65535,
+              "arithmetic_residual_all_ones": true,
+              "checksum_equality": true
+            }
+          }
+        ],
+        "limitations": [
+          "supplied_synthetic_bytes_only",
+          "no_protocol_field_validation",
+          "no_actual_integrity_or_authenticity_claim",
+          "logical_caps_not_containment"
+        ]
+      }
+    },
+    {
+      "input": {
+        "version": 1,
+        "cases": [
+          {
+            "id": "verify-ffff",
+            "operation": "verify",
+            "data_hex": "FFFF",
+            "supplied_checksum": 65535
+          }
+        ]
+      },
+      "expected": {
+        "version": 1,
+        "profile": "ones-complement16-guarded-update-v1",
+        "word_order": "big_endian",
+        "status": "modeled",
+        "rows": [
+          {
+            "id": "verify-ffff",
+            "operation": "verify",
+            "status": "modeled",
+            "reason": null,
+            "byte_length": 2,
+            "word_count": 1,
+            "padding_octets": 0,
+            "update_guard": null,
+            "assumptions": {
+              "supplied_checksum": 65535,
+              "offset": null,
+              "new_word": null
+            },
+            "result": {
+              "data_sum": 65535,
+              "recomputed_checksum": 0,
+              "supplied_checksum": 65535,
+              "combined_sum": 65535,
+              "arithmetic_residual_all_ones": true,
+              "checksum_equality": false
+            }
+          }
+        ],
+        "limitations": [
+          "supplied_synthetic_bytes_only",
+          "no_protocol_field_validation",
+          "no_actual_integrity_or_authenticity_claim",
+          "logical_caps_not_containment"
+        ]
+      }
+    },
+    {
+      "input": {
+        "version": 1,
+        "cases": [
+          {
+            "id": "failed-residual",
+            "operation": "verify",
+            "data_hex": "0000",
+            "supplied_checksum": 65279
+          }
+        ]
+      },
+      "expected": {
+        "version": 1,
+        "profile": "ones-complement16-guarded-update-v1",
+        "word_order": "big_endian",
+        "status": "modeled",
+        "rows": [
+          {
+            "id": "failed-residual",
+            "operation": "verify",
+            "status": "modeled",
+            "reason": null,
+            "byte_length": 2,
+            "word_count": 1,
+            "padding_octets": 0,
+            "update_guard": null,
+            "assumptions": {
+              "supplied_checksum": 65279,
+              "offset": null,
+              "new_word": null
+            },
+            "result": {
+              "data_sum": 0,
+              "recomputed_checksum": 65535,
+              "supplied_checksum": 65279,
+              "combined_sum": 65279,
+              "arithmetic_residual_all_ones": false,
+              "checksum_equality": false
+            }
+          }
+        ],
+        "limitations": [
+          "supplied_synthetic_bytes_only",
+          "no_protocol_field_validation",
+          "no_actual_integrity_or_authenticity_claim",
+          "logical_caps_not_containment"
+        ]
+      }
+    },
+    {
+      "input": {
+        "version": 1,
+        "cases": [
+          {
+            "id": "rfc1624",
+            "operation": "replace_word",
+            "data_hex": "CD7A5555",
+            "offset": 2,
+            "new_word": 12933
+          }
+        ]
+      },
+      "expected": {
+        "version": 1,
+        "profile": "ones-complement16-guarded-update-v1",
+        "word_order": "big_endian",
+        "status": "modeled",
+        "rows": [
+          {
+            "id": "rfc1624",
+            "operation": "replace_word",
+            "status": "modeled",
+            "reason": null,
+            "byte_length": 4,
+            "word_count": 2,
+            "padding_octets": 0,
+            "update_guard": true,
+            "assumptions": {
+              "supplied_checksum": null,
+              "offset": 2,
+              "new_word": 12933
+            },
+            "result": {
+              "offset": 2,
+              "old_word": 21845,
+              "new_word": 12933,
+              "old_checksum": 56623,
+              "incremental_checksum": 0,
+              "recomputed_checksum": 0,
+              "rfc1624_matches_recompute": true,
+              "legacy_rfc1141_checksum": 65535,
+              "legacy_matches_recompute": false
+            }
+          }
+        ],
+        "limitations": [
+          "supplied_synthetic_bytes_only",
+          "no_protocol_field_validation",
+          "no_actual_integrity_or_authenticity_claim",
+          "logical_caps_not_containment"
+        ]
+      }
+    },
+    {
+      "input": {
+        "version": 1,
+        "cases": [
+          {
+            "id": "reverse-zero",
+            "operation": "replace_word",
+            "data_hex": "CD7A3285",
+            "offset": 2,
+            "new_word": 21845
+          }
+        ]
+      },
+      "expected": {
+        "version": 1,
+        "profile": "ones-complement16-guarded-update-v1",
+        "word_order": "big_endian",
+        "status": "modeled",
+        "rows": [
+          {
+            "id": "reverse-zero",
+            "operation": "replace_word",
+            "status": "modeled",
+            "reason": null,
+            "byte_length": 4,
+            "word_count": 2,
+            "padding_octets": 0,
+            "update_guard": true,
+            "assumptions": {
+              "supplied_checksum": null,
+              "offset": 2,
+              "new_word": 21845
+            },
+            "result": {
+              "offset": 2,
+              "old_word": 12933,
+              "new_word": 21845,
+              "old_checksum": 0,
+              "incremental_checksum": 56623,
+              "recomputed_checksum": 56623,
+              "rfc1624_matches_recompute": true,
+              "legacy_rfc1141_checksum": 56623,
+              "legacy_matches_recompute": true
+            }
+          }
+        ],
+        "limitations": [
+          "supplied_synthetic_bytes_only",
+          "no_protocol_field_validation",
+          "no_actual_integrity_or_authenticity_claim",
+          "logical_caps_not_containment"
+        ]
+      }
+    },
+    {
+      "input": {
+        "version": 1,
+        "cases": [
+          {
+            "id": "unchanged",
+            "operation": "replace_word",
+            "data_hex": "00010002",
+            "offset": 2,
+            "new_word": 2
+          }
+        ]
+      },
+      "expected": {
+        "version": 1,
+        "profile": "ones-complement16-guarded-update-v1",
+        "word_order": "big_endian",
+        "status": "modeled",
+        "rows": [
+          {
+            "id": "unchanged",
+            "operation": "replace_word",
+            "status": "modeled",
+            "reason": null,
+            "byte_length": 4,
+            "word_count": 2,
+            "padding_octets": 0,
+            "update_guard": true,
+            "assumptions": {
+              "supplied_checksum": null,
+              "offset": 2,
+              "new_word": 2
+            },
+            "result": {
+              "offset": 2,
+              "old_word": 2,
+              "new_word": 2,
+              "old_checksum": 65532,
+              "incremental_checksum": 65532,
+              "recomputed_checksum": 65532,
+              "rfc1624_matches_recompute": true,
+              "legacy_rfc1141_checksum": 65532,
+              "legacy_matches_recompute": true
+            }
+          }
+        ],
+        "limitations": [
+          "supplied_synthetic_bytes_only",
+          "no_protocol_field_validation",
+          "no_actual_integrity_or_authenticity_claim",
+          "logical_caps_not_containment"
+        ]
+      }
+    },
+    {
+      "input": {
+        "version": 1,
+        "cases": [
+          {
+            "id": "to-zero",
+            "operation": "replace_word",
+            "data_hex": "00010002",
+            "offset": 2,
+            "new_word": 0
+          }
+        ]
+      },
+      "expected": {
+        "version": 1,
+        "profile": "ones-complement16-guarded-update-v1",
+        "word_order": "big_endian",
+        "status": "modeled",
+        "rows": [
+          {
+            "id": "to-zero",
+            "operation": "replace_word",
+            "status": "modeled",
+            "reason": null,
+            "byte_length": 4,
+            "word_count": 2,
+            "padding_octets": 0,
+            "update_guard": true,
+            "assumptions": {
+              "supplied_checksum": null,
+              "offset": 2,
+              "new_word": 0
+            },
+            "result": {
+              "offset": 2,
+              "old_word": 2,
+              "new_word": 0,
+              "old_checksum": 65532,
+              "incremental_checksum": 65534,
+              "recomputed_checksum": 65534,
+              "rfc1624_matches_recompute": true,
+              "legacy_rfc1141_checksum": 65534,
+              "legacy_matches_recompute": true
+            }
+          }
+        ],
+        "limitations": [
+          "supplied_synthetic_bytes_only",
+          "no_protocol_field_validation",
+          "no_actual_integrity_or_authenticity_claim",
+          "logical_caps_not_containment"
+        ]
+      }
+    },
+    {
+      "input": {
+        "version": 1,
+        "cases": [
+          {
+            "id": "unsupported",
+            "operation": "replace_word",
+            "data_hex": "00005555",
+            "offset": 2,
+            "new_word": 0
+          }
+        ]
+      },
+      "expected": {
+        "version": 1,
+        "profile": "ones-complement16-guarded-update-v1",
+        "word_order": "big_endian",
+        "status": "contains_unsupported",
+        "rows": [
+          {
+            "id": "unsupported",
+            "operation": "replace_word",
+            "status": "unsupported",
+            "reason": "unchanged_nonzero_word_required",
+            "byte_length": 4,
+            "word_count": 2,
+            "padding_octets": 0,
+            "update_guard": false,
+            "assumptions": {
+              "supplied_checksum": null,
+              "offset": 2,
+              "new_word": 0
+            },
+            "result": null
+          }
+        ],
+        "limitations": [
+          "supplied_synthetic_bytes_only",
+          "no_protocol_field_validation",
+          "no_actual_integrity_or_authenticity_claim",
+          "logical_caps_not_containment"
+        ]
+      }
+    },
+    {
+      "input": {
+        "version": 1,
+        "cases": [
+          {
+            "id": "collision-a",
+            "operation": "checksum",
+            "data_hex": "00010002"
+          }
+        ]
+      },
+      "expected": {
+        "version": 1,
+        "profile": "ones-complement16-guarded-update-v1",
+        "word_order": "big_endian",
+        "status": "modeled",
+        "rows": [
+          {
+            "id": "collision-a",
+            "operation": "checksum",
+            "status": "modeled",
+            "reason": null,
+            "byte_length": 4,
+            "word_count": 2,
+            "padding_octets": 0,
+            "update_guard": null,
+            "assumptions": {
+              "supplied_checksum": null,
+              "offset": null,
+              "new_word": null
+            },
+            "result": {
+              "folded_sum": 3,
+              "checksum": 65532,
+              "checksum_hex": "fffc"
+            }
+          }
+        ],
+        "limitations": [
+          "supplied_synthetic_bytes_only",
+          "no_protocol_field_validation",
+          "no_actual_integrity_or_authenticity_claim",
+          "logical_caps_not_containment"
+        ]
+      }
+    },
+    {
+      "input": {
+        "version": 1,
+        "cases": [
+          {
+            "id": "collision-b",
+            "operation": "checksum",
+            "data_hex": "00020001"
+          }
+        ]
+      },
+      "expected": {
+        "version": 1,
+        "profile": "ones-complement16-guarded-update-v1",
+        "word_order": "big_endian",
+        "status": "modeled",
+        "rows": [
+          {
+            "id": "collision-b",
+            "operation": "checksum",
+            "status": "modeled",
+            "reason": null,
+            "byte_length": 4,
+            "word_count": 2,
+            "padding_octets": 0,
+            "update_guard": null,
+            "assumptions": {
+              "supplied_checksum": null,
+              "offset": null,
+              "new_word": null
+            },
+            "result": {
+              "folded_sum": 3,
+              "checksum": 65532,
+              "checksum_hex": "fffc"
+            }
+          }
+        ],
+        "limitations": [
+          "supplied_synthetic_bytes_only",
+          "no_protocol_field_validation",
+          "no_actual_integrity_or_authenticity_claim",
+          "logical_caps_not_containment"
+        ]
+      }
+    },
+    {
+      "input": {
+        "version": 1,
+        "cases": [
+          {
+            "id": "verify-odd",
+            "operation": "verify",
+            "data_hex": "01",
+            "supplied_checksum": 65279
+          }
+        ]
+      },
+      "expected": {
+        "version": 1,
+        "profile": "ones-complement16-guarded-update-v1",
+        "word_order": "big_endian",
+        "status": "modeled",
+        "rows": [
+          {
+            "id": "verify-odd",
+            "operation": "verify",
+            "status": "modeled",
+            "reason": null,
+            "byte_length": 1,
+            "word_count": 1,
+            "padding_octets": 1,
+            "update_guard": null,
+            "assumptions": {
+              "supplied_checksum": 65279,
+              "offset": null,
+              "new_word": null
+            },
+            "result": {
+              "data_sum": 256,
+              "recomputed_checksum": 65279,
+              "supplied_checksum": 65279,
+              "combined_sum": 65535,
+              "arithmetic_residual_all_ones": true,
+              "checksum_equality": true
+            }
+          }
+        ],
+        "limitations": [
+          "supplied_synthetic_bytes_only",
+          "no_protocol_field_validation",
+          "no_actual_integrity_or_authenticity_claim",
+          "logical_caps_not_containment"
+        ]
+      }
+    },
+    {
+      "input": {
+        "version": 1,
+        "cases": [
+          {
+            "id": "verify-empty",
+            "operation": "verify",
+            "data_hex": "",
+            "supplied_checksum": 65535
+          }
+        ]
+      },
+      "expected": {
+        "version": 1,
+        "profile": "ones-complement16-guarded-update-v1",
+        "word_order": "big_endian",
+        "status": "modeled",
+        "rows": [
+          {
+            "id": "verify-empty",
+            "operation": "verify",
+            "status": "modeled",
+            "reason": null,
+            "byte_length": 0,
+            "word_count": 0,
+            "padding_octets": 0,
+            "update_guard": null,
+            "assumptions": {
+              "supplied_checksum": 65535,
+              "offset": null,
+              "new_word": null
+            },
+            "result": {
+              "data_sum": 0,
+              "recomputed_checksum": 65535,
+              "supplied_checksum": 65535,
+              "combined_sum": 65535,
+              "arithmetic_residual_all_ones": true,
+              "checksum_equality": true
+            }
+          }
+        ],
+        "limitations": [
+          "supplied_synthetic_bytes_only",
+          "no_protocol_field_validation",
+          "no_actual_integrity_or_authenticity_claim",
+          "logical_caps_not_containment"
+        ]
+      }
+    }
+  ],
+  "envelopes": [
+    {
+      "name": "modeled",
+      "input": {
+        "version": 1,
+        "cases": [
+          {
+            "id": "rfc1071",
+            "operation": "checksum",
+            "data_hex": "0001F203F4F5F6F7"
+          },
+          {
+            "id": "failed-residual",
+            "operation": "verify",
+            "data_hex": "0000",
+            "supplied_checksum": 65279
+          },
+          {
+            "id": "unchanged",
+            "operation": "replace_word",
+            "data_hex": "00010002",
+            "offset": 2,
+            "new_word": 2
+          }
+        ]
+      },
+      "exit": 0,
+      "expected": {
+        "version": 1,
+        "profile": "ones-complement16-guarded-update-v1",
+        "word_order": "big_endian",
+        "status": "modeled",
+        "rows": [
+          {
+            "id": "rfc1071",
+            "operation": "checksum",
+            "status": "modeled",
+            "reason": null,
+            "byte_length": 8,
+            "word_count": 4,
+            "padding_octets": 0,
+            "update_guard": null,
+            "assumptions": {
+              "supplied_checksum": null,
+              "offset": null,
+              "new_word": null
+            },
+            "result": {
+              "folded_sum": 56818,
+              "checksum": 8717,
+              "checksum_hex": "220d"
+            }
+          },
+          {
+            "id": "failed-residual",
+            "operation": "verify",
+            "status": "modeled",
+            "reason": null,
+            "byte_length": 2,
+            "word_count": 1,
+            "padding_octets": 0,
+            "update_guard": null,
+            "assumptions": {
+              "supplied_checksum": 65279,
+              "offset": null,
+              "new_word": null
+            },
+            "result": {
+              "data_sum": 0,
+              "recomputed_checksum": 65535,
+              "supplied_checksum": 65279,
+              "combined_sum": 65279,
+              "arithmetic_residual_all_ones": false,
+              "checksum_equality": false
+            }
+          },
+          {
+            "id": "unchanged",
+            "operation": "replace_word",
+            "status": "modeled",
+            "reason": null,
+            "byte_length": 4,
+            "word_count": 2,
+            "padding_octets": 0,
+            "update_guard": true,
+            "assumptions": {
+              "supplied_checksum": null,
+              "offset": 2,
+              "new_word": 2
+            },
+            "result": {
+              "offset": 2,
+              "old_word": 2,
+              "new_word": 2,
+              "old_checksum": 65532,
+              "incremental_checksum": 65532,
+              "recomputed_checksum": 65532,
+              "rfc1624_matches_recompute": true,
+              "legacy_rfc1141_checksum": 65532,
+              "legacy_matches_recompute": true
+            }
+          }
+        ],
+        "limitations": [
+          "supplied_synthetic_bytes_only",
+          "no_protocol_field_validation",
+          "no_actual_integrity_or_authenticity_claim",
+          "logical_caps_not_containment"
+        ]
+      }
+    },
+    {
+      "name": "mixed",
+      "input": {
+        "version": 1,
+        "cases": [
+          {
+            "id": "unsupported",
+            "operation": "replace_word",
+            "data_hex": "00005555",
+            "offset": 2,
+            "new_word": 0
+          },
+          {
+            "id": "failed-residual",
+            "operation": "verify",
+            "data_hex": "0000",
+            "supplied_checksum": 65279
+          },
+          {
+            "id": "rfc1624",
+            "operation": "replace_word",
+            "data_hex": "CD7A5555",
+            "offset": 2,
+            "new_word": 12933
+          }
+        ]
+      },
+      "exit": 3,
+      "expected": {
+        "version": 1,
+        "profile": "ones-complement16-guarded-update-v1",
+        "word_order": "big_endian",
+        "status": "contains_unsupported",
+        "rows": [
+          {
+            "id": "unsupported",
+            "operation": "replace_word",
+            "status": "unsupported",
+            "reason": "unchanged_nonzero_word_required",
+            "byte_length": 4,
+            "word_count": 2,
+            "padding_octets": 0,
+            "update_guard": false,
+            "assumptions": {
+              "supplied_checksum": null,
+              "offset": 2,
+              "new_word": 0
+            },
+            "result": null
+          },
+          {
+            "id": "failed-residual",
+            "operation": "verify",
+            "status": "modeled",
+            "reason": null,
+            "byte_length": 2,
+            "word_count": 1,
+            "padding_octets": 0,
+            "update_guard": null,
+            "assumptions": {
+              "supplied_checksum": 65279,
+              "offset": null,
+              "new_word": null
+            },
+            "result": {
+              "data_sum": 0,
+              "recomputed_checksum": 65535,
+              "supplied_checksum": 65279,
+              "combined_sum": 65279,
+              "arithmetic_residual_all_ones": false,
+              "checksum_equality": false
+            }
+          },
+          {
+            "id": "rfc1624",
+            "operation": "replace_word",
+            "status": "modeled",
+            "reason": null,
+            "byte_length": 4,
+            "word_count": 2,
+            "padding_octets": 0,
+            "update_guard": true,
+            "assumptions": {
+              "supplied_checksum": null,
+              "offset": 2,
+              "new_word": 12933
+            },
+            "result": {
+              "offset": 2,
+              "old_word": 21845,
+              "new_word": 12933,
+              "old_checksum": 56623,
+              "incremental_checksum": 0,
+              "recomputed_checksum": 0,
+              "rfc1624_matches_recompute": true,
+              "legacy_rfc1141_checksum": 65535,
+              "legacy_matches_recompute": false
+            }
+          }
+        ],
+        "limitations": [
+          "supplied_synthetic_bytes_only",
+          "no_protocol_field_validation",
+          "no_actual_integrity_or_authenticity_claim",
+          "logical_caps_not_containment"
+        ]
+      }
+    },
+    {
+      "name": "empty",
+      "input": {
+        "version": 1,
+        "cases": []
+      },
+      "exit": 0,
+      "expected": {
+        "version": 1,
+        "profile": "ones-complement16-guarded-update-v1",
+        "word_order": "big_endian",
+        "status": "modeled",
+        "rows": [],
+        "limitations": [
+          "supplied_synthetic_bytes_only",
+          "no_protocol_field_validation",
+          "no_actual_integrity_or_authenticity_claim",
+          "logical_caps_not_containment"
+        ]
+      }
+    },
+    {
+      "name": "invalid-late",
+      "input": {
+        "version": 1,
+        "cases": [
+          {
+            "id": "unsupported",
+            "operation": "replace_word",
+            "data_hex": "00005555",
+            "offset": 2,
+            "new_word": 0
+          },
+          {
+            "id": "bad-offset",
+            "operation": "replace_word",
+            "data_hex": "00010002",
+            "offset": 1,
+            "new_word": 0
+          }
+        ]
+      },
+      "exit": 2,
+      "expected": null,
+      "diagnostic": "checksum-lab: invalid replacement offset\n"
+    },
+    {
+      "name": "invalid-after-residual",
+      "input": {
+        "version": 1,
+        "cases": [
+          {
+            "id": "failed-residual",
+            "operation": "verify",
+            "data_hex": "0000",
+            "supplied_checksum": 65279
+          },
+          {
+            "id": "bad-hex",
+            "operation": "checksum",
+            "data_hex": "00 01"
+          }
+        ]
+      },
+      "exit": 2,
+      "expected": null,
+      "diagnostic": "checksum-lab: invalid hexadecimal bytes\n"
+    }
+  ]
+}

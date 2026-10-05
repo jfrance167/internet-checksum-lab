@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "cases": [
+    {
+      "id": "failed-residual",
+      "operation": "verify",
+      "data_hex": "0000",
+      "supplied_checksum": 65279
+    },
+    {
+      "id": "bad-hex",
+      "operation": "checksum",
+      "data_hex": "00 01"
+    }
+  ]
+}

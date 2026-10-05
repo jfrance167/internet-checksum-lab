@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "cases": [
+    {
+      "id": "unsupported",
+      "operation": "replace_word",
+      "data_hex": "00005555",
+      "offset": 2,
+      "new_word": 0
+    },
+    {
+      "id": "bad-offset",
+      "operation": "replace_word",
+      "data_hex": "00010002",
+      "offset": 1,
+      "new_word": 0
+    }
+  ]
+}

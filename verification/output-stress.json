@@ -1,0 +1,10 @@
+{
+  "input_bytes": 40409,
+  "output_bytes": 29774,
+  "rows": 64,
+  "decoded_bytes": 16384,
+  "id_length": 32,
+  "output_cap": 262144,
+  "within_cap": true,
+  "exact_maximum_claim": false
+}

@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "cases": [
+    {
+      "id": "rfc1071",
+      "operation": "checksum",
+      "data_hex": "0001F203F4F5F6F7"
+    },
+    {
+      "id": "failed-residual",
+      "operation": "verify",
+      "data_hex": "0000",
+      "supplied_checksum": 65279
+    },
+    {
+      "id": "unchanged",
+      "operation": "replace_word",
+      "data_hex": "00010002",
+      "offset": 2,
+      "new_word": 2
+    }
+  ]
+}

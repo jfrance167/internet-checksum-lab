@@ -1,0 +1,89 @@
+{
+  "python": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+  "checks": {
+    "odd-low-padding": {
+      "exit": 1,
+      "assertion_failures": 7,
+      "errors": 0,
+      "intended_assertion_failed": true
+    },
+    "carry-dropped": {
+      "exit": 1,
+      "assertion_failures": 18,
+      "errors": 0,
+      "intended_assertion_failed": true
+    },
+    "legacy-eq2": {
+      "exit": 1,
+      "assertion_failures": 6,
+      "errors": 0,
+      "intended_assertion_failed": true
+    },
+    "residual-equality-conflated": {
+      "exit": 1,
+      "assertion_failures": 3,
+      "errors": 0,
+      "intended_assertion_failed": true
+    },
+    "normal": {
+      "exit": 0
+    },
+    "optimized": {
+      "exit": 0
+    },
+    "compile": {
+      "exit": 0
+    },
+    "bandit": {
+      "exit": 0
+    }
+  },
+  "demos": {
+    "empty.json": {
+      "exit": 0,
+      "rows": 0
+    },
+    "invalid-after-residual.json": {
+      "exit": 2,
+      "rows": null
+    },
+    "invalid-late.json": {
+      "exit": 2,
+      "rows": null
+    },
+    "mixed.json": {
+      "exit": 3,
+      "rows": 3
+    },
+    "modeled.json": {
+      "exit": 0,
+      "rows": 3
+    }
+  },
+  "stress": {
+    "input_bytes": 40409,
+    "output_bytes": 29774,
+    "rows": 64,
+    "decoded_bytes": 16384,
+    "id_length": 32,
+    "output_cap": 262144,
+    "within_cap": true,
+    "exact_maximum_claim": false
+  },
+  "frozen_verified": true,
+  "source_restored": true,
+  "sha256": {
+    "checksum_lab.py": "7180695ae63a355ad563cdbcea7adc1e8c4bfa1f20c0e98fdfea74b9b0deb715",
+    "tests/test_checksum_lab.py": "3dcc2cec5c93da46f538a891ccf45dd657284fa86b207d085e8b4a8fda5d5041",
+    "verification/verify.py": "b0bcbfe9843706a2ac819010b4c89353a248f71da64eb2869235e94c187c626d",
+    "SCHEMA.md": "88b430b373510c8aa146effb3e0ea0730a94107fa72e498a6f3a84c28c221207",
+    "tests/hand-oracles.json": "86fec630e3c45ecfb8c9a7507f213eee7fb335d386fe50e215e629613ea697d8",
+    "verification/frozen-contract.json": "1b50424d46e453cc3c9e7fb30aa42ac476bc75ae362c94aa906d17ca58f56bce",
+    "research/freeze-fixtures.ps1": "83f9df8a88bd3feb407cfa9a95b511cdc3f9d3703e559c84f03e9ea7c4106b9d",
+    "examples/empty.json": "d8e38cb14ed6afdb737dd16d3898b542e4e2a05656c9fe3d54da28370361998b",
+    "examples/invalid-after-residual.json": "0cc5801bb1f8148bad0ca7e2274020e223d5e79f9b2f87405479f469594f6671",
+    "examples/invalid-late.json": "f556613820e8e1e8df91c9b3f73a1a12d3a706b82a6b0b70ba324a6e434153f2",
+    "examples/mixed.json": "6edf4fa5702bbbb37d1143e48a3015e2accf38505186fafcaaf2ef55e4aa8352",
+    "examples/modeled.json": "9035a0cd6f5c7dfdf0a507b2370a57b8a1cf93e52d168aad9b12a2bc461d3f3c"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "cases": [
+    {
+      "id": "unsupported",
+      "operation": "replace_word",
+      "data_hex": "00005555",
+      "offset": 2,
+      "new_word": 0
+    },
+    {
+      "id": "failed-residual",
+      "operation": "verify",
+      "data_hex": "0000",
+      "supplied_checksum": 65279
+    },
+    {
+      "id": "rfc1624",
+      "operation": "replace_word",
+      "data_hex": "CD7A5555",
+      "offset": 2,
+      "new_word": 12933
+    }
+  ]
+}
