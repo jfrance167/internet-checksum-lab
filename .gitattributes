@@ -1,0 +1,26 @@
+
+# Preserve reviewed snapshot bytes across checkout platforms.
+/.github/workflows/codeql.yml -text
+/DECISIONS.md -text
+/LEARNING.md -text
+/LICENSE -text
+/PLAN.md -text
+/README.md -text
+/RESEARCH.md -text
+/SCHEMA.md -text
+/SECURITY.md -text
+/STATE.md -text
+/checksum_lab.py -text
+/examples/empty.json -text
+/examples/invalid-after-residual.json -text
+/examples/invalid-late.json -text
+/examples/mixed.json -text
+/examples/modeled.json -text
+/requirements-security.txt -text
+/tasks/plan.md -text
+/tasks/todo.md -text
+/tests/hand-oracles.json -text
+/tests/test_checksum_lab.py -text
+/verification/REPORT.md -text
+/verification/frozen-contract.json -text
+/verification/verify.py -text
